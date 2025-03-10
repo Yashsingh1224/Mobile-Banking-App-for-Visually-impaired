@@ -20,7 +20,8 @@
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff",
         "googleServicesFile": "./app/google-services.json"
-      }
+      },
+      "package": "com.syndicate_1012.myfifimfb"
     },
     "web": {
       "bundler": "metro",
