@@ -98,7 +98,7 @@ const Register = () => {
                 lastName: form.lastName,
                 pin: "1234",
                 image: "",
-                address: "27th street New York",
+                address: "UPES Bhidoli Via Premnagar, Dehradun-248007, Uttarakhand",
                 accountNumber: accountNumber,
                 country: "",
                 state: "",
@@ -115,7 +115,10 @@ const Register = () => {
             router.push("/EmailOTP")
         } catch (error) {
             console.log(error.message)
-            Alert.alert("Please enter a valid email address");
+            if (error.code === 'auth/weak-password') {
+                Alert.alert('Password must be atleast 6 characters')
+            }
+            Alert.alert('Enter a valid Email address !');
             if (error.code === 'auth/email-already-in-use') {
                 Alert.alert('Error', 'Email already used')
             }
